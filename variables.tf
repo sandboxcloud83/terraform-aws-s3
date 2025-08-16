@@ -14,3 +14,21 @@ variable "enable_versioning" {
   type        = bool
   default     = true
 }
+
+variable "kms_key_arn" {
+  description = "Optional: The ARN of the KMS key to encrypt the bucket."
+  type        = string
+  default     = null
+}
+
+variable "log_bucket_name" {
+  description = "Opcional: El nombre del bucket donde se guardarán los logs de acceso."
+  type        = string
+  default     = null # Al ser 'null' por defecto, el logging es opcional
+}
+
+variable "log_prefix" {
+  description = "Opcional: Un prefijo para los archivos de log dentro del bucket de destino."
+  type        = string
+  default     = "log/"
+}
