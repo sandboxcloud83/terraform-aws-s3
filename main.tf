@@ -13,7 +13,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "this" {
   }
 }
 
-resource "aws_s3_bucket_logging_configuration" "this" {
+resource "aws_s3_bucket_logging" "this" {
   count = var.log_bucket_name != null ? 1 : 0
   bucket = aws_s3_bucket.this.id
   target_bucket = var.log_bucket_name
